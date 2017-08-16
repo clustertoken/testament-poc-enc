@@ -1,0 +1,116 @@
+//
+   Created by Steve on 12/08/2017.
+
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='../stylesheets/style.css')
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+        <link href="../../stylesheets/style.css" rel="stylesheet">
+    body
+
+block content
+    h1= title
+    p Welcome to #{title}
+
+
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<div class="panel panel-default">
+<div class="panel-body panel-main">
+h2 #{desc}
+<h4>Login to Testament</h4>
+
+<ul id="ul1" name="ul1"></ul>
+<ul id="list-drive-contents" name="list-drive-contents"></ul>
+<hr>
+
+<!-- LOGIN BOX -->
+<div class="row row-x">
+<div class="col-md-12 mb">Returning users can use this option. This assumes users have their own Private Key on the system. (OK)</div>
+<div class="col-md-4">Enter your plaintext private key</div>
+<div class="col-md-6"><input type="text" id="txt_plain_key"  class="form-control" placeholder="Enter the key you received from the contract"></div>
+<div class="col-md-2"><button class="btn btn-primary btn-plaintext">Enter</button></div>
+<div class="col-md-12 plain-error"></div>
+</div>
+
+<hr>
+
+<div class="row row-x">
+<div class="col-md-12 mb">Use this if you received an encrypted version via the blockchain. It will open the files made by this key. (NOK)</div>
+<div class="col-md-4">Enter your received hash</div>
+<div class="col-md-6"><input type="text" id="RECEIVED_HASH" class="form-control"></div>
+<div class="col-md-2"></div>
+<div class="col-md-12">&nbsp;</div>
+<div class="col-md-4">Enter the sharing key</div>
+<div class="col-md-6"><input type="text" id="RECEIVED_SHARING" class="form-control" placeholder="Enter the seed"></div>
+<div class="col-md-2"><button class="btn btn-primary btn-get-keys-from-hash">Enter</button></div>
+</div>
+
+<hr>
+
+<div class="row row-x">
+<div class="col-md-12 mb">Allow users to upload and use their 'private.key' file instead of plaintext. (NOT)</div>
+<div class="col-md-4">Upload your private keyfile.</div>
+<div class="col-md-6">Not implemented for demo version</div>
+<div class="col-md-2"><button class="btn btn-primary">Enter</button></div>
+</div>
+
+<hr>
+
+<div class="row row-x">
+<div class="col-md-12 mb">I'm a new user and want to store my files</div>
+<div class="col-md-5"></div>
+<div class="col-md-2"><button class="btn btn-info btn-register-user-1">Register</button></div>
+<div class="col-md-5"></div>
+
+</div>
+
+
+
+
+
+</div>
+<!-- REGISTRATION PANEL -->
+<div class="panel-body panel-register" style="display:none">
+h2 #{desc}
+<h4>Login to Testament</h4>
+<ul id="ul1" name="ul1"></ul>
+<ul id="list-drive-contents" name="list-drive-contents"></ul>
+<hr>
+
+<div class="row row-x reg-step1">
+<div class="col-md-12 mb"><strong>Step 1:</strong> Register an account on the STORJ network.</div>
+<div class="col-md-5"><input type="email" id="txt-user-email" class="form-control" placeholder="Enter your email address"></div>
+<div class="col-md-5"><input type="password" id="txt-user-pass" class="form-control" placeholder="Your solid password"></div>
+<div class="col-md-2"><button class="btn btn-primary btn-register-user">Register</button></div>
+</div>
+<hr>
+<div class="row row-x reg-step2" style="">
+<div class="col-md-12 mb"><p><strong>Step 2:</strong> Check your mailbox and activate your account.</p><p>Afterwards, click the button below to generate your personal keypairs.</p></div>
+<div class="col-md-5"></div>
+<div class="col-md-2"><button class="btn btn-primary btn-generate-keypair">Generate keypair</button></div>
+<div class="col-md-5"></div>
+
+</div>
+
+</div>
+
+<!-- END REGISTRATION PANEL -->
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="../../javascripts/userlogic.js"></script>

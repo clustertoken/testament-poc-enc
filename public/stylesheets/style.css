@@ -1,0 +1,117 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.glyphicon {
+  font-size: inherit !important;
+  color:#fff !important;
+  line-height: inherit !important;
+}
+
+.ion-icon {
+  font-size: 24px !important;
+  padding: 0px 10px !important;
+}
+
+.ion-icon-m {
+  font-size: 20px !important;
+  padding: 0px 10px !important;
+}
+
+.row-x {
+  margin-top: 20px !important;
+}
+
+.table>tbody>tr>td { vertical-align: middle!important;}
+
+
+.filenames{
+  text-align: left;
+}
+
+.fat {
+  font-weight:  700;
+}
+
+.btn:focus, .upload-btn:focus{
+  outline: 0 !important;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #4791D2;
+}
+
+body {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.row {
+  margin-top: 80px;
+}
+
+.upload-btn {
+  color: #ffffff;
+  background-color: #F89406;
+
+}
+
+.upload-btn:hover,
+.upload-btn:focus,
+.upload-btn:active,
+.upload-btn.active {
+  color: #ffffff;
+  background-color: #FA8900;
+
+}
+
+h4 {
+  padding-bottom: 30px;
+  color: #B8BDC1;
+}
+
+.glyphicon {
+  font-size: 5em;
+  color: #9CA3A9;
+}
+
+h2 {
+  margin-top: 15px;
+  color: #68757E;
+}
+
+.panel {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#upload-input {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 850px;
+  }
+}
+
+.row-x {
+  margin-top: 20px !important;
+}
+
+.mb {
+  margin-bottom: 22px;
+}

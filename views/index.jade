@@ -1,0 +1,93 @@
+//
+   Created by Steve on 12/08/2017.
+
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='../stylesheets/style.css')
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link href="../../stylesheets/style.css" rel="stylesheet">
+  body
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<div class="panel panel-default">
+<div class="panel-body body-step1">
+h2 #{desc}
+<h4>Digipulse PoC</h4>
+<ul id="ul1" name="ul1"></ul>
+<ul id="list-drive-contents" name="list-drive-contents"></ul>
+<hr>
+<!-- DRIVE BOX -->
+
+<div class="row row-x" style="margin-bottom: 20px; margin-top:10px;">
+<div class="col-md-12">
+<a href="/api/upload" class="btn btn-lg btn-info btn-reload-drive ion-android-upload">&nbsp; &nbsp; File uploader </a>
+</div>
+</div>
+
+<div class="drive-errors row" style="margin-bottom: 20px; margin-top:10px; display:none"></div>
+<div class="drive-actions row" style="margin-bottom: 20px; margin-top:10px; display:none">
+<div class="col-md-4">Create a new drive:</div>
+<div class="col-md-5"><input type="text" id="drive-name" class="form-control" placeholder="Name of your drive"></div>
+<div class="col-md-1">
+<button class="btn btn-md btn-add-drive ion-android-add ion-icon"></button>
+</div>
+<div class="col-md-1">
+<button class="btn btn-md btn-primary btn-reload-drive ion-ios-refresh-empty ion-icon "></button>
+</div>
+<div class="col-md-1">
+</div>
+</div>
+
+<div class="row row-x">
+<div class="col-md-12">
+<table class="table table-hover" id="table-drives">
+</table>
+</div>
+</div>
+
+
+<!-- FILES BOX -->
+<div class="file-errors row-x" style="margin-bottom: 20px; display:none"></div>
+<div class="file-actions row-x" style="margin-bottom: 20px; display:none">
+<hr>
+<div class="col-md-9 file-action-inherit" style="text-align: left"></div>
+<div class="col-md-1">
+<button class="btn btn-md btn-primary ion-refresh ion-icon"></button>
+</div>
+<div class="col-md-2">
+<button class="btn btn-md upload-btn ion-android-upload ion-icon"></button>
+</div>
+</div>
+
+<div class="row ">
+<div class="col-md-12">
+<table class="table table-hover table-responsive" id="table">
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="../../javascripts/drivelogic.js"></script>
+

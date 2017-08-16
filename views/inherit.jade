@@ -1,0 +1,152 @@
+//
+   Created by Steve on 12/08/2017.
+
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='../stylesheets/style.css')
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+        <link href="../../stylesheets/style.css" rel="stylesheet">
+    body
+
+block content
+    h1= title
+    p Welcome to #{title}
+
+
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<div class="panel panel-default">
+<div class="panel-body body-step-1">
+h2 #{desc}
+<h4>Digipulse PoC</h4>
+<ul id="ul1" name="ul1"></ul>
+<ul id="list-drive-contents" name="list-drive-contents"></ul>
+<hr>
+<!-- TOP BOX -->
+<div class="drive-actions row" style="margin-bottom: 20px; margin-top:10px;">
+<form action="" method="post" enctype="multipart/form-data" id="inheritForm">
+<div class="col-md-12"><p>You are about to make a drive inheritable. This means will an encrypted version of your keypair will be published on our smart contract. Please fill out the form carefully as there is no other way to decrypt your keypair!</p></div>
+<div class="col-md-12">&nbsp</div>
+<div class="col-md-6">Select your drive to inherit:</div>
+<div class="col-md-6"><select class="form-control" id="DRIVE_LIST"></select></div>
+<div class="col-md-12">&nbsp</div>
+<div class="col-md-6">Release time after last sign of life:</div>
+<div class="col-md-6"><select class="form-control" id="TIME_LIST"><option value="1">1 month</option><option value="2">6 months</option><option value="3">1 year</option><option value="4">2 years</option></select></div>
+<div class="col-md-12">&nbsp</div>
+<div class="col-md-6">Destinator complete name:</div>
+<div class="col-md-6"><input type="text" class="form-control" id="FULL-NAME" placeholder="Enter the full name + lastname"></div>
+<div class="col-md-12">&nbsp</div>
+<div class="col-md-6">Destinator birth:</div>
+<div class="col-md-6"><input type="text" class="form-control" id="BIRTH" placeholder="Use xx/xx/xxxx + birthplace"></div>
+<div class="col-md-12">&nbsp</div>
+<div class="col-md-6">Destinator email:</div>
+<div class="col-md-6"><input type="email" class="form-control" id="EMAIL" placeholder="Please avoid email address that contains the name."></div>
+
+</div>
+<!-- /TOP BOX -->
+<hr>
+
+<div class="row row-x">
+<div class="col-md-4">&nbsp;</div>
+<div class="col-md-4">
+<button class="btn btn-md btn-primary col-md-12 btn-inherit-step-2">Proceed to next step</button>
+</div>
+<div class="col-md-4">&nbsp;</div>
+</div>
+</form>
+
+</div>
+
+<div class="panel-body body-step-2" style="display:none">
+h2 #{desc}
+<h4>Digipulse PoC</h4>
+<ul id="ul1" name="ul1"></ul>
+<ul id="list-drive-contents" name="list-drive-contents"></ul>
+<hr>
+<!-- TOP BOX -->
+<div class="drive-actions row" style="margin-bottom: 20px; margin-top:10px;">
+<div class="col-md-12"><p>You are about to make a drive inheritable. This means will an encrypted version of your keypair will be published on our smart contract. Please fill out the form carefully as there is no other way to decrypt your keypair!</p></div>
+<div class="col-md-12">&nbsp</div>
+<div class="col-md-6">Your sharing key:</div>
+<div class="col-md-6"><p id="hashkey" class="fat"></p></div>
+<div class="col-md-12">&nbsp</div>
+</div>
+<hr>
+<div class="col-md-12">Our smart contract will register this hash:</div>
+<div class="col-md-12"><pre id="enckey" class="fat"><strong></strong></pre></div>
+<div class="col-md-12">&nbsp</div>
+<div class="col-md-12">This hash will be sent after [NO_SIGNAL_TIME] since your last sign of life.</div>
+<div class="col-md-12" ><p id="enckey" class="fat"></p></div>
+<div class="col-md-12">&nbsp</div>
+<div class="col-md-12">Make sure to provide the <strong>sharing key</strong> to the benificient of your drive.</div>
+<div class="col-md-12">Your sharing key must be kept secret and only be shared with the benificiant of this contract.</div>
+<div class="col-md-12"><p id="enckey" class="fat"><strong></strong></p></div>
+<div class="col-md-12"><span class=""><input type="checkbox" class="payout_check" checked="checked" style="opacity: 1;">&nbsp;&nbsp;Send the sharing key via email</span></div>
+<div class="col-md-12">&nbsp</div>
+
+<!-- /TOP BOX -->
+<hr>
+
+<div class="row row-x">
+<div class="col-md-4">&nbsp;</div>
+<div class="col-md-4">
+<button class="btn btn-md btn-primary col-md-12 btn-inherit-step-3">Proceed to next step</button>
+</div>
+<div class="col-md-4">&nbsp;</div>
+</div>
+
+
+</div>
+
+<div class="panel-body body-step-3" style="display:none">
+h2 #{desc}
+<h4>Digipulse PoC</h4>
+<ul id="ul1" name="ul1"></ul>
+<ul id="list-drive-contents" name="list-drive-contents"></ul>
+<hr>
+<!-- TOP BOX -->
+<div class="drive-actions row" style="margin-bottom: 20px; margin-top:10px;">
+<div class="col-md-12"><p>Final version includes Ethereum here to write simple smart contract storing only the hash.</p></div>
+| <div class="col-md-12">&nbsp</div>
+<div class="col-md-12">The keypair can only be decoded when the benificiary enters both the hash as the sharing key.</div>
+<div class="col-md-12">&nbsp</div>
+<div class="col-md-12">Proof of concept by Tarmi.</div>
+<div class="col-md-12">&nbsp</div>
+<div class="col-md-12"><a href='/api/logout'>Logout</a> or <a href='/api'>go back</a></div>
+</div>
+
+
+<!-- /TOP BOX -->
+<hr>
+
+<div class="row row-x">
+<div class="col-md-4">&nbsp;</div>
+<div class="col-md-4">
+<button class="btn btn-md btn-primary col-md-12">Proceed to next step</button>
+</div>
+<div class="col-md-4">&nbsp;</div>
+</div>
+
+
+</div>
+</div>
+<!-- panel-default -->
+</div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+<script src="../../javascripts/drivelogic.js"></script>
